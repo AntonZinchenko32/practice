@@ -1,19 +1,32 @@
-const message = makeLongestWordsArray("собачка сходила в туалет");
-alert(message);
 
+let inputIn = document.querySelector('.input');
+let button = document.querySelector('button');
 
+let output;
 
-function adding(x, y) {
-    const sum = x+y;
-    const frase = 'Welcome! Сумма чисел равна ';
-    return frase + sum;
+button.onclick = processing;
+
+ function processing () {
+  output = makeLongestWordsArray (inputIn.value);
+  document.getElementById("output").innerHTML = output;
+}
+
+inputIn.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    button.click();
   }
+});
 
-
- 
-  
   function makeLongestWordsArray (string) {
-    const arr = string.split(" ");
+    const cleanString = string.replaceAll(',', '')
+    .replaceAll('.', '')
+    .replaceAll('!', '')
+    .replaceAll('?', '');
+    const arr = cleanString.split(" ");
     let longestWord = arr[0];
     let longestWordIndex = 0;
     for (let i = 1; i < arr.length; i+=1) {

@@ -10,9 +10,17 @@
 <body>
     <section class="testing-space">
         <div>
-            <p class="test-paragraph">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis at nobis corrupti, consequatur amet quae ad dolor praesentium recusandae quisquam rem accusantium sit, eaque blanditiis rerum quam tempore dolore similique!
-            </p>
+            <label class="input-field" for="input-field">Поиск самых длинных слов в предложении</label>
+            <form class="check-form">
+              <input class="input" id="input-field" placeholder="Вводи сюда">
+              <button class="send-button" type="button" id='add'>
+                <b class="button-label">Отправить в обработку</b>
+              </button>
+              <div class="output-space">
+                  <p class="output-label">Перечень слов с самым большим количеством букв</p>
+                  <p class="output" id="output"></p>
+              </div>
+            </form>
         </div>
     </section>
     <script src="js/script.js"></script>
