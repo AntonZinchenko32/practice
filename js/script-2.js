@@ -53,7 +53,7 @@ const tweets = [
     }
   
     acc[tag] += 1;
-  
+
     return acc;
   };
   
@@ -61,5 +61,5 @@ const tweets = [
   const countTags = tags => tags.reduce(getTagStats, {});
   
   const tagCount = countTags(tags);
-  console.log(tags);
-
+  
+  
