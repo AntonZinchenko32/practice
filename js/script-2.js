@@ -1,7 +1,27 @@
-document.querySelector('.image').onclick = () => {
+const myBtn = document.querySelector('.hui');
 
-	basicLightbox.create(`
-		<img width="1400" height="900" src="https://d3k6fw755gyykp.cloudfront.net/96a71347-271f-4e3a-a895-0457b36f27f0/96a77bd9-2b99-4d78-8eea-75bbab3ce5d3/97eb8005-7672-4d1c-8cec-53328ba9f7ca/w2400h2400-ccixfgdza.png">
-	`).show();
+myBtn.addEventListener("click", ohuevai);
 
+
+function ohuevai(event) {
+	isSuccess = true;
 }
+console.log("test")
+
+// Change value of isSuccess variable to call resolve or reject
+let isSuccess = false;
+
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (isSuccess) {
+      resolve("Success! Value passed to resolve function");
+    } else {
+      reject("Error! Error passed to reject function");
+    }
+  }, 2000);
+});
+
+promise
+  .then(value => console.log(value)) // "Success! Value passed to resolve function"
+  .catch(error => console.log(error)) // "Error! Error passed to reject function"
+  .finally(() => console.log("Promise settled")); // "Promise settled"
